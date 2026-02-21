@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Message</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Kanit", sans-serif;
+        background: linear-gradient(135deg, #4facfe, #00c6ff);
+    }
+
+    .card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 320px;
+        transition: 0.3s;
+    }
+
+    h2 {
+        color: #2196f3;
+        margin-bottom: 20px;
+    }
+
+    input {
+        padding: 10px;
+        width: 80%;
+        border: 2px solid #4facfe;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #4facfe;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #2196f3;
+    }
+
+    .message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+        display: none;
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🔒 ใส่รหัสก่อนนะ</h2>
+    <input type="password" id="password" placeholder="กรอกรหัส...">
+    <br>
+    <button onclick="checkPassword()">ยืนยัน</button>
+
+    <div class="message" id="message">
+        💙 ทำไรอยู่ครับ ~ กินข้าวย่างงง 💙
+    </div>
+
+    <div class="error" id="error">
+        ❌ รหัสไม่ถูกต้อง
+    </div>
+</div>
+
+<script>
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    var message = document.getElementById("message");
+    var error = document.getElementById("error");
+
+    if(password === "121212") {
+        message.style.display = "block";
+        error.style.display = "none";
+    } else {
+        message.style.display = "none";
+        error.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
